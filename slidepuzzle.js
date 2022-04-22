@@ -70,8 +70,8 @@ function onShuffle() {
 
             // 疑似的なクリック位置を生成
             let panel = document.getElementById("panel"),
-                randNum = Math.floor(Math.random() * 9),
-                k = parseInt(panel.children[randNum].textContent);
+                ranNum = Math.floor(Math.random() * 9),
+                k = parseInt(panel.children[ranNum].textContent);
 
             if (tile.textContent === "") {
                 if (index === (k + 3)) {
@@ -95,8 +95,6 @@ function tileClick(e) {
     tiles.forEach((tile, index) => {
         // タイルが空の場所を探す
         if (tile.textContent === "") {
-            console.log(index);
-            console.log(i);
             // 空タイルとクリック位置が同じならそこに移動させる
             if (index === (i + 3)) {
                 // 上に移動
