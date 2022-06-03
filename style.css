@@ -5,6 +5,7 @@ h1 {
 button {
     display: block;
     margin: auto;
+    width: 150px;
 }
 
 #panel {

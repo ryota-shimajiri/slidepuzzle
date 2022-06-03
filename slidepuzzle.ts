@@ -1,5 +1,5 @@
 let tiles = [];
-const shuffleBtn = document.getElementById("shuffleBtn");
+const shuffleBtn = document.getElementById("shuffleBtn") as HTMLElement;
 shuffleBtn.addEventListener("click", onShuffle, false);
 
 window.onload = function() {
@@ -20,13 +20,14 @@ window.onload = function() {
         // tilesとして保持しておく
         tiles.push(tile);
     });
-    checkColor();
+    onShuffle();
 }
 
 // 定位置なら色を付ける処理
 function checkColor() {
 
     let tile = document.getElementsByClassName("tile") as HTMLCollectionOf<HTMLElement>;
+    let clearChackList: number[] = [];
     Object.keys(tile).forEach((value, index) => {
 
         let t = tile[value];
@@ -34,32 +35,45 @@ function checkColor() {
         if (t.id === t.textContent && parseInt(t.id) === 1) {
             // 樺色 かばいろ
             tile[index].style.backgroundColor = "#cd5e3c";
+            clearChackList.push(1);
         } else if(t.id === t.textContent && parseInt(t.id) === 2) {
             // 花緑青 はなろくしょう
             tile[index].style.backgroundColor = "#00a381";
+            clearChackList.push(1);
         } else if(t.id === t.textContent && parseInt(t.id) === 3) {
             // 白群 びゃくぐん
             tile[index].style.backgroundColor = "#83ccd2";
+            clearChackList.push(1);
         } else if(t.id === t.textContent && parseInt(t.id) === 4) {
             // 鶸色 ひわいろ
             tile[index].style.backgroundColor = "#d7cf3a";
+            clearChackList.push(1);
         } else if(t.id === t.textContent && parseInt(t.id) === 5) {
             // 緋色 ひいろ
             tile[index].style.backgroundColor = "#d3381c";
+            clearChackList.push(1);
         } else if(t.id === t.textContent && parseInt(t.id) === 6) {
             // 瑠璃色 るりいろ
             tile[index].style.backgroundColor = "#1e50a2";
+            clearChackList.push(1);
         } else if(t.id === t.textContent && parseInt(t.id) === 7) {
             // 桃花色 ももはないろ
             tile[index].style.backgroundColor = "#e198b4";
+            clearChackList.push(1);
         } else if(t.id === t.textContent && parseInt(t.id) === 8) {
             // 淡萌黄 うすもえぎ
             tile[index].style.backgroundColor = "#93ca76";
+            clearChackList.push(1);
         } else {
-            // 定位置出ないなら白にする
+            // 定位置で無ければ白にする
             tile[index].style.backgroundColor = "#ffffff"
         }
     });
+    if (clearChackList.length === 8) {
+        setTimeout(() => alert("CLEAR!!"), 1);
+        // クリア後は判定を空にしておく
+        clearChackList.length = 0;
+    }
 }
 
 // シャッフル関数
