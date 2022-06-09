@@ -2,7 +2,7 @@ let tiles = [];
 const shuffleBtn = document.getElementById("shuffleBtn") as HTMLElement;
 shuffleBtn.addEventListener("click", onShuffle, false);
 
-window.onload = function() {
+window.onload = function () {
     let numbers = ["1", "2", "3", "4", "5", "6", "7", "8", ""];
 
     // パネルを取得
@@ -36,31 +36,31 @@ function checkColor() {
             // 樺色 かばいろ
             tile[index].style.backgroundColor = "#cd5e3c";
             clearChackList.push(1);
-        } else if(t.id === t.textContent && parseInt(t.id) === 2) {
+        } else if (t.id === t.textContent && parseInt(t.id) === 2) {
             // 花緑青 はなろくしょう
             tile[index].style.backgroundColor = "#00a381";
             clearChackList.push(1);
-        } else if(t.id === t.textContent && parseInt(t.id) === 3) {
+        } else if (t.id === t.textContent && parseInt(t.id) === 3) {
             // 白群 びゃくぐん
             tile[index].style.backgroundColor = "#83ccd2";
             clearChackList.push(1);
-        } else if(t.id === t.textContent && parseInt(t.id) === 4) {
+        } else if (t.id === t.textContent && parseInt(t.id) === 4) {
             // 鶸色 ひわいろ
             tile[index].style.backgroundColor = "#d7cf3a";
             clearChackList.push(1);
-        } else if(t.id === t.textContent && parseInt(t.id) === 5) {
+        } else if (t.id === t.textContent && parseInt(t.id) === 5) {
             // 緋色 ひいろ
             tile[index].style.backgroundColor = "#d3381c";
             clearChackList.push(1);
-        } else if(t.id === t.textContent && parseInt(t.id) === 6) {
+        } else if (t.id === t.textContent && parseInt(t.id) === 6) {
             // 瑠璃色 るりいろ
             tile[index].style.backgroundColor = "#1e50a2";
             clearChackList.push(1);
-        } else if(t.id === t.textContent && parseInt(t.id) === 7) {
+        } else if (t.id === t.textContent && parseInt(t.id) === 7) {
             // 桃花色 ももはないろ
             tile[index].style.backgroundColor = "#e198b4";
             clearChackList.push(1);
-        } else if(t.id === t.textContent && parseInt(t.id) === 8) {
+        } else if (t.id === t.textContent && parseInt(t.id) === 8) {
             // 淡萌黄 うすもえぎ
             tile[index].style.backgroundColor = "#93ca76";
             clearChackList.push(1);
@@ -100,7 +100,6 @@ function onShuffle() {
             }
         });
     }
-    checkColor();
 }
 
 function tileClick(e) {
@@ -129,7 +128,7 @@ function tileClick(e) {
     });
 }
 
-function tileSwap(i, j){
+function tileSwap(i, j) {
     // タイルの数字を入れ替える
     let tmp = tiles[i].textContent;
     tiles[i].textContent = tiles[j].textContent;

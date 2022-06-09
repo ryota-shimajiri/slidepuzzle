@@ -98,7 +98,7 @@ function onShuffle() {
             }
         });
     }
-    checkColor();
+    //checkColor();
 }
 function tileClick(e) {
     // クリック位置を取得
